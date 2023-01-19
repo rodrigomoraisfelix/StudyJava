@@ -1,0 +1,49 @@
+package studies;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class gameBiggerOrSmaller {
+
+	public static void main(String[] args) {
+		
+		Scanner d = new Scanner(System.in);
+		Random random = new Random();
+		int r;
+		int cont;
+		int again;
+		
+		
+		do {
+			r = random.nextInt(100);
+			cont = 10;
+			System.out.println("try to guess the number from 0 to 100");
+			if(cont == 10) {	
+				do {
+						System.out.printf("You have %d tries : ",cont);
+						int n = d.nextInt();
+						cont--;
+						
+						if(n==r) {
+							System.out.println("Correct!!");
+							cont = 1;
+							break;
+						}
+						else if(n>r) {
+							System.out.println("\nThe number you entered is bigger");
+						}
+						else if(r>n) {
+							System.out.println("\nthe number you entered is smaller");
+						}
+					}while(cont>=1);
+			}
+		System.out.println("press 0 to exit or "
+				+ "\nAny button to continue the program");
+		again = d.nextInt();
+		}while(again!=0);
+		
+		
+		
+		d.close();
+	}
+}
